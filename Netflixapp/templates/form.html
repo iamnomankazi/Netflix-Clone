@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>netflix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Narrow">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md" style="background: #1b1b1b;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+            <h1 style="color: rgb(228,33,68);margin-right: 650px;"><strong>NETFLIX</strong></h1>
+        </div>
+    </nav>
+    <form method="POST" style="background: #e42144;" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="poster">
+        <div class="form-group" style="background: #514a4a;"><label style="font-size: 20px;background: #e42144;border-radius: 7px;margin-left: 5px;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Type&nbsp;</strong><input class="form-control" type="text" style="background: rgb(224,238,241);margin-bottom: -5px;" placeholder="Enter Type Here" name="Type"></label>
+            
+            <label
+                style="font-size: 20px;background: #e42144;margin-left: 5px;border-radius: 7px;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Title&nbsp;</strong><input class="form-control" type="text" style="background: rgb(224,238,241);margin-bottom: -5px;" placeholder="Enter Title Here" name="Title"></label><label style="font-size: 20px;background: #e42144;margin-left: 5px;border-radius: 7px;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ReleaseYear</strong><input class="form-control" type="text" style="background: rgb(224,238,241);margin-bottom: -5px;" placeholder="Enter Release Year" name="Releaseyear"></label>
+                <label
+                    style="font-size: 20px;background: #e42144;margin-left: 5px;border-radius: 7px;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Category</strong><input class="form-control" type="text" style="background: rgb(224,238,241);margin-bottom: -5px;" placeholder="Enter Category Here" name="Category"></label><label style="font-size: 20px;background: #e42144;margin-left: 5px;border-radius: 7px;margin-top: 5px;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;description</strong><input class="form-control" type="text" style="background: rgb(224,238,241);margin-bottom: -5px;" placeholder="Enter Description Here" name="description"></label>
+                    
+                    <button
+                        class="btn btn-primary" type="submit" style="margin-bottom: 40px;margin-left: 40px;margin-top: 10px;">Button</button>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

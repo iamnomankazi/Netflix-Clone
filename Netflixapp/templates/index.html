@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<style>.flex-container {
+  display: flex;
+}
+</style>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md" style="background: #262424;">
+        <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+            <h1 style="color: rgb(252,43,93);margin-right: 650px;"><strong>NETFLIX</strong></h1>
+            {% if name == "" %}
+            <a href="login"><button class="btn" style="color: blanchedalmond;"><i class="fa fa-user-circle" aria-hidden="true"></i> <br>Login</button></a>
+            {% else %}
+            <a href="logout"><button class="btn" style="color: blanchedalmond;"><i class="fa fa-user-times" aria-hidden="true"></i> <br>{{name}}</button></a>
+        </div>
+        {% endif %}
+    </nav>
+    <div class="container">
+        <div class="flex-container">
+                {% for i in show %}
+                <div class="d-flex flex-row bd-highlight mb-3">        
+                <div class="card">   
+                    <div class="card-body">
+                        <img class="card-img-top w-100 d-block" src="{{i.poster.url}}" style="height:200px; width: 200px;"><br>
+                        <h4 class="card-title" style="width: 100px;">{{i.Title}}</h4><br>
+                        <p class="card-text">{{i.description}}&nbsp;</p><br>
+                        <a href="{% url "View" i.id i.Category %}"><button class="btn btn-primary" type="button">Watch</button></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div></div>
+
+          </div>
+        
+        
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

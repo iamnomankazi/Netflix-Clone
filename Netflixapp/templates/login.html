@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Narrow">
+    <link rel="stylesheet" href="/static/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="/static/css/styles5.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md" style="background: #1b1b1b;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+            <h1 style="color: rgb(228,33,68);margin-right: 650px;"><strong>NETFLIX</strong></h1>
+        </div>
+    </nav>
+    <div class="login-clean">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="illustration"><img src="/static/img/logo.png" style="width: 100px;height: 100px;border-radius: 10px;"></div>
+            <div class="form-group"><input class="form-control" type="text" name="CustomerUsername" placeholder="Username"></div>
+            <div class="form-group"><input class="form-control" type="password" name="CustomerPassword" placeholder="Password"></div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Log In</button></div>
+            </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

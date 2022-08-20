@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Narrow">
+    <link rel="stylesheet" href="/netflix/static/css/styles2.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md" style="background: #1b1b1b;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+            <h1 style="color: rgb(228,33,68);margin-right: 650px;"><strong>NETFLIX</strong></h1>
+        </div>
+    </nav>
+    <div style="background: #1b1b1b;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="background: #a09e9e;margin-bottom: 10px;border-radius: 10px;">
+                    
+                    <div class="media" style="width: 200px;height: 200px;"><img class="mr-3" src="{{getmovie.poster.url}}" style="width: 196px;height: 197px;border-radius: 7px;">
+                        <div class="media-body">
+                            <h5 style="font-size: 30px;margin-top: 10px;"><strong>{{getmovie.Title}}</strong></h5>
+                            <p style="width: 400px;margin-top: 15px;">{{getmovie.description}}</p><br>
+                            <a href="{% url "watchpage" %}"><button class="btn btn-primary">Watch</button></a>
+                        </div>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-light navbar-expand-md" style="background: #e42144;border-radius: 10px;">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navcol-2"></div>
+                <h1 style="font-size: 30px;margin-right: 490px;font-family: 'Alfa Slab One', cursive;"><em>Recommendations For You</em></h1>
+            </div>
+        </nav>
+    </div>
+    <div style="background: #1b1b1b;">
+        <div class="container" style="background: #1b1b1b;">
+            <div class="row" style="background: #1b1b1b;">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                {% for j in suggestions %}
+                <div class="card" style="width: 10rem; margin-left: 15px; margin-top: 10px;">
+                          <div class="thumbnail">
+                            <a href="{% url "View" j.id j.Category %}">
+                              <img src="{{j.poster.url}}" alt="Lights" style="width: 150px;height: 190px;border-radius: 7px;margin-top: 10px;margin-bottom: 10px;">
+                              <!-- <div class="caption">
+                                <p>Lorem ipsum dolor</p>
+                              </div> -->
+                            </a>
+
+                          </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+               
+            </div>
+        </div>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
